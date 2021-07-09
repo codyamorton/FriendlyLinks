@@ -55,7 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FriendlyLinks.Data.cs" />
+    <Compile Include="GolfCourse.cs" />
+    <Compile Include="Golfer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeeTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

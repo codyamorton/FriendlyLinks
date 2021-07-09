@@ -31,7 +31,7 @@ namespace FriendlyLinks.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<TeeTimes> TeeTimes { get; set; }
+        public DbSet<TeeTime> TeeTimes { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
