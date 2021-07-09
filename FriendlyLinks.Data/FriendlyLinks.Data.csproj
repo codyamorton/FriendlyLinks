@@ -57,12 +57,29 @@
     <Compile Include="FriendlyLinks.Data.cs" />
     <Compile Include="GolfCourse.cs" />
     <Compile Include="Golfer.cs" />
+    <Compile Include="Migrations\202107090905170_InitialCreate.cs" />
+    <Compile Include="Migrations\202107090905170_InitialCreate.Designer.cs">
+      <DependentUpon>202107090905170_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107090913510_initialmigration.cs" />
+    <Compile Include="Migrations\202107090913510_initialmigration.Designer.cs">
+      <DependentUpon>202107090913510_initialmigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TeeTime.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107090905170_InitialCreate.resx">
+      <DependentUpon>202107090905170_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107090913510_initialmigration.resx">
+      <DependentUpon>202107090913510_initialmigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
