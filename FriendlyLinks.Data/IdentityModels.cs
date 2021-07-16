@@ -31,7 +31,12 @@ namespace FriendlyLinks.Data
         {
             return new ApplicationDbContext();
         }
-        public DbSet<TeeTime> TeeTimes { get; set; }
+        public DbSet<TeeTime> TeeTime { get; set; }
+        public DbSet<Golfer> Golfers { get; set; }
+        public DbSet<GolfCourse> GolfCourses { get; set; }
+
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
