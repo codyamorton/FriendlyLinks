@@ -31,11 +31,10 @@ namespace FriendlyLinks.Data
         {
             return new ApplicationDbContext();
         }
+
         public DbSet<TeeTime> TeeTime { get; set; }
-        public DbSet<Golfer> Golfers { get; set; }
-        public DbSet<GolfCourse> GolfCourses { get; set; }
-
-
+        public DbSet<Golfer> Golfer { get; set; }
+        public DbSet<GolfCourse> GolfCourse { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -47,6 +46,7 @@ namespace FriendlyLinks.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+
         public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>
         {
             public IdentityUserLoginConfiguration()

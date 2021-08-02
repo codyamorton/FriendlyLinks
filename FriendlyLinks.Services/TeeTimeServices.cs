@@ -1,30 +1,20 @@
 ﻿using FriendlyLinks.Data;
 using FriendlyLinks.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FriendlyLinks.Services
 {
     public class TeeTimeServices
     {
-        private readonly Guid _teeTimeId;
-        public TeeTimeServices()
-        {
-            //  _teeTimeId = teeTimeId;
-        }
         public bool CreateTeeTime(TeeTimeCreate model)
         {
             var entity =
                 new TeeTime()
                 {
-                    TeeTimeId = _teeTimeId,
-                    CourseName = model.CourseName,
-                    CourseCity = model.CourseCity,
+                    TeeTimeId = model.TeeTimeId,
                     CoursePrice = model.CoursePrice,
-                    TeeOffTime = model.TeeOffTime
+                    TeeOffTime = model.TeeOffTime,
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -41,43 +31,39 @@ namespace FriendlyLinks.Services
                 var query =
                     ctx
                         .TeeTime
-                        .Where(e => e.TeeTimeId == _teeTimeId)
+                        .Where(e => e.TeeTimeId == e.TeeTimeId)
                         .Select(
                             e =>
                                 new TeeTimeListItem
                                 {
                                     TeeTimeId = e.TeeTimeId,
-                                    IsStarred = e.IsStarred,
-                                    CourseName = e.CourseName,
-                                    CourseCity = e.CourseCity,
-                                    CoursePrice = e.CoursePrice
+                                    CoursePrice = e.CoursePrice,
+                                    TeeOffTime = e.TeeOffTime,
                                 }
                         );
 
                 return query.ToArray();
-
             }
-
         }
-        public TeeTimeDetail GetTeeTimeById(Guid id)
+
+        public TeeTimeDetail GetTeeTimeById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .TeeTime
-                        .Single(e => e.TeeTimeId == id && e.TeeTimeId == _teeTimeId);
+                        .Single(e => e.TeeTimeId == id && e.TeeTimeId == e.TeeTimeId);
                 return
                     new TeeTimeDetail
                     {
                         TeeTimeId = entity.TeeTimeId,
-                        CourseName = entity.CourseName,
-                        CourseCity = entity.CourseCity,
-                        CoursePrice = entity.CoursePrice
-
+                        CoursePrice = entity.CoursePrice,
+                        TeeOffTime = entity.TeeOffTime,
                     };
             }
         }
+
         public bool UpdateTeeTime(TeeTimeEdit model)
         {
             using (var ctx = new ApplicationDbContext())
@@ -85,22 +71,22 @@ namespace FriendlyLinks.Services
                 var entity =
                     ctx
                         .TeeTime
-                        .Single(e => e.TeeTimeId == model.TeeTimeId && e.TeeTimeId == _teeTimeId);
+                        .Single(e => e.TeeTimeId == model.TeeTimeId && e.TeeTimeId == e.TeeTimeId);
 
-                entity.CourseName = model.CourseName;
-                entity.CourseCity = model.CourseCity;
+                entity.TeeOffTime = model.TeeOffTime;
                 entity.CoursePrice = model.CoursePrice;
                 return ctx.SaveChanges() == 1;
             }
         }
-        public bool TeeTimeDelete(Guid teeTimeId)
+
+        public bool TeeTimeDelete(int teeTimeId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .TeeTime
-                        .Single(e => e.TeeTimeId == teeTimeId && e.TeeTimeId == _teeTimeId);
+                        .Single(e => e.TeeTimeId == teeTimeId && e.TeeTimeId == e.TeeTimeId);
 
                 ctx.TeeTime.Remove(entity);
 
@@ -109,4 +95,3 @@ namespace FriendlyLinks.Services
         }
     }
 }
-

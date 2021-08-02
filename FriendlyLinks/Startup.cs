@@ -2,6 +2,7 @@
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(FriendlyLinks.Startup))]
+
 namespace FriendlyLinks
 {
     public partial class Startup

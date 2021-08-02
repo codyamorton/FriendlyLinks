@@ -1,0 +1,47 @@
+﻿@model FriendlyLinks.Data.TeeTime
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TeeTime</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GolfCourse.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GolfCourse.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoursePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoursePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeeOffTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeeOffTime)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

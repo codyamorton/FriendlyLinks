@@ -54,6 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GolfCourseCreate.cs" />
+    <Compile Include="GolfCourseDelete.cs" />
+    <Compile Include="GolfCourseDetail.cs" />
+    <Compile Include="GolfCourseEdit.cs" />
+    <Compile Include="GolfCourseList.cs" />
+    <Compile Include="GolferCreate.cs" />
+    <Compile Include="GolferDelete.cs" />
+    <Compile Include="GolferDetail.cs" />
+    <Compile Include="GolferEdit.cs" />
+    <Compile Include="GolferListItem.cs" />
     <Compile Include="TeeTimeDelete.cs" />
     <Compile Include="TeeTimeDetail.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

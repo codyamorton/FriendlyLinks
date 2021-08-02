@@ -1,0 +1,41 @@
+﻿@model FriendlyLinks.Data.TeeTime
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TeeTime</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GolfCourse.CourseName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GolfCourse.CourseName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CoursePrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CoursePrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TeeOffTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeeOffTime)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TeeTimeId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

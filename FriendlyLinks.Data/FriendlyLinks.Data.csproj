@@ -69,13 +69,17 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="GolfCourse.cs" />
     <Compile Include="Golfer.cs" />
-    <Compile Include="Migrations\202107090905170_InitialCreate.cs" />
-    <Compile Include="Migrations\202107090905170_InitialCreate.Designer.cs">
-      <DependentUpon>202107090905170_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\202107212317089_InitialCreate.cs" />
+    <Compile Include="Migrations\202107212317089_InitialCreate.Designer.cs">
+      <DependentUpon>202107212317089_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107090913510_initialmigration.cs" />
-    <Compile Include="Migrations\202107090913510_initialmigration.Designer.cs">
-      <DependentUpon>202107090913510_initialmigration.cs</DependentUpon>
+    <Compile Include="Migrations\202107280213263_finalizeddb.cs" />
+    <Compile Include="Migrations\202107280213263_finalizeddb.Designer.cs">
+      <DependentUpon>202107280213263_finalizeddb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108022203186_fina.cs" />
+    <Compile Include="Migrations\202108022203186_fina.Designer.cs">
+      <DependentUpon>202108022203186_fina.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,11 +90,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107090905170_InitialCreate.resx">
-      <DependentUpon>202107090905170_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107212317089_InitialCreate.resx">
+      <DependentUpon>202107212317089_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107090913510_initialmigration.resx">
-      <DependentUpon>202107090913510_initialmigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107280213263_finalizeddb.resx">
+      <DependentUpon>202107280213263_finalizeddb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108022203186_fina.resx">
+      <DependentUpon>202108022203186_fina.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

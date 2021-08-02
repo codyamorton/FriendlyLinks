@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FriendlyLinks.Data
 {
@@ -11,16 +7,19 @@ namespace FriendlyLinks.Data
     {
         [Key]
         public int CourseId { get; set; }
+
         [Required]
         public string CourseName { get; set; }
+
         [Required]
         public string City { get; set; }
+
         [Required]
         public string State { get; set; }
-        [Required]
-        public string AboutCourse { get; set; }
-        [Required]
-        public decimal CostPerRound { get; set; }
 
+        [Required]
+        public string Info { get; set; }
+
+        public virtual ICollection<TeeTime> TeeTime { get; set; }
     }
 }
