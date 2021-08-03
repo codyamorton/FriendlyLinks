@@ -55,13 +55,13 @@ namespace FriendlyLinks.Services
                 var entity =
                     ctx
                         .Golfer
-                        .Single(e => e.GolferId == id && e.GolferId == e.GolferId);
+                        .Single(e => e.GolferId == id);
                 return
                     new GolferDetail
                     {
                         FirstName = entity.FirstName,
                         LastName = entity.LastName,
-                        Email = entity.Email,
+                        Email = entity.Email
                     };
             }
         }

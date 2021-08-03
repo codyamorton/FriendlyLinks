@@ -1,14 +1,16 @@
 ﻿body {
-    background-image: url('../pics/golf course fairway.jpg');
-} 
-.page
-{
-    margin:0pc auto 0px auto;
-    width:900px
+    background-image: url('../pics/background plain.jpg');
 }
+
+.page {
+    margin: 0pc auto 0px auto;
+    width: 900px
+}
+
 button {
-    outline-color:black
+    outline-color: black
 }
+
 row {
-    outline-color:black
+    outline-color: black
 }

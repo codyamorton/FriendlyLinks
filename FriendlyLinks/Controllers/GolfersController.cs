@@ -1,4 +1,6 @@
 ﻿using FriendlyLinks.Data;
+using FriendlyLinks.Models;
+using FriendlyLinks.Services;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -17,13 +19,15 @@ namespace FriendlyLinks.Controllers
         }
 
         // GET: Golfers/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(int id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Golfer golfer = db.Golfer.Find(id);
+            // Golfer golfer = db.Golfer.Find(id);
+            GolferServices service = new GolferServices();
+            GolferDetail golfer = service.GetGolferById(id);
             if (golfer == null)
             {
                 return HttpNotFound();

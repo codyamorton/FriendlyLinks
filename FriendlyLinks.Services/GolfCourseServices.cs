@@ -9,10 +9,16 @@ namespace FriendlyLinks.Services
     public class GolfCourseServices
     {
         private readonly Guid _userId;
+        private int? id;
 
         public GolfCourseServices(Guid userId)
         {
             _userId = userId;
+        }
+
+        public GolfCourseServices(int? id)
+        {
+            this.id = id;
         }
 
         public bool CreateGolfCourse(GolfCourseCreate model)
@@ -64,11 +70,10 @@ namespace FriendlyLinks.Services
                 var entity =
                     ctx
                         .GolfCourse
-                        .Single(e => e.CourseId == id && e.CourseId == e.CourseId);
+                        .Single(e => e.CourseId == id);
                 return
                     new GolfCourseDetail
                     {
-                        CourseId = entity.CourseId,
                         CourseName = entity.CourseName,
                         CourseCity = entity.City,
                         CourseState = entity.State,

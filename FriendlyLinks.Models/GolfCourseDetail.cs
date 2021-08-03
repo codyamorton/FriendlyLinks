@@ -5,7 +5,7 @@ namespace FriendlyLinks.Models
 {
     public class GolfCourseDetail
     {
-        public int CourseId { get; set; }
+        public Guid CourseId { get; set; }
         public string CourseName { get; set; }
         public string CourseCity { get; set; }
         public string CourseState { get; set; }

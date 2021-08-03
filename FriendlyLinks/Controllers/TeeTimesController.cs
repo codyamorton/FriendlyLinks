@@ -1,4 +1,5 @@
 ﻿using FriendlyLinks.Data;
+using FriendlyLinks.Services;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
@@ -24,6 +25,7 @@ namespace FriendlyLinks.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+            TeeTimeServices service = new TeeTimeServices();
             TeeTime teeTime = db.TeeTime.Find(id);
             if (teeTime == null)
             {

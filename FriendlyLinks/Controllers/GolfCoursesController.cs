@@ -23,6 +23,7 @@ namespace FriendlyLinks.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             GolfCourse golfCourse = db.GolfCourse.Find(id);
             if (golfCourse == null)
             {
